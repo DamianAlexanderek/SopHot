@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+}
+
+.hero-shadow {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: -1;
+}
+
+.orange-color {
+    color: rgb(255, 102, 0);
+}
+
+.blue-color {
+    color: #0288D1;
+}
+
+.scroll-fix::before {
+    display: block;
+    margin-top: -3rem;
+    height: 3rem;
+    content: '';
+}
+
+/* NAWIGACJA */
+.navbar-brand {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+nav .navbar-nav,
+nav .fa-bars {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+nav .fa-bars {
+    padding: 1rem 2rem;
+}
+
+/* Header */
+
+header {
+    position: relative;
+    height: 60rem;
+    background-image: url('../media/img/header1.jpg');
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+}
+header .btn {
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+}
+.header-text {
+    font-size: 2.2rem;
+}
+
+/* about us*/
+
+#partner .btn-link {
+    font-size: 1.8rem
+}
+
+/* TEAM */
+
+#team {
+    padding: 8rem 0;
+    background-color: rgb(248,248,248);
+}
+
+
+#team .card-img-top {
+    height: 240px;
+    object-fit: cover;
+}
+
+/*#team .card {*/
+/*    height: 100%;*/
+/*    width: 50%;*/
+/*}*/
+/* KONTAKT */
+
+#contact .far {
+    margin-right: .8rem;
+}
+
+/* Oferty */
+
+.offer .display-4 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+.offer img {
+    height: 240px;
+    object-fit: cover;
+}
+.offer .btn {
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    border: #efca02;
+}
+.offer button {
+    width: 240px;
+    display: block;
+    padding: 10px 15px;
+    margin: 0 auto;
+}
+.offer .fas {
+    margin-right: .8rem;
+}
+
+/* detail */
+.detail h2, .detail h3, .detail display-3 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.detail h2 {
+    font-size: 2.6rem;
+}
+
+.detail iframe {
+    width: 100%;
+    min-height: 100%;
+}
+
