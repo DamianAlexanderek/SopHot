@@ -19,7 +19,7 @@
 <body data-spy="scroll" data-target="#navbar-example">
     <nav id="navbar-example" class="navbar navbar-expand-lg navbar-light bg-light py-4 fixed-top" id="navbar-example">
         <div class="container">
-            <a class="navbar-brand px-4 blue-color" href="#offers"><i class="fas fa-sun orange-color"></i>SopHot</a>
+            <a class="navbar-brand px-4 blue-color" href="{% url "offers:offers_list" %}"><i class="fas fa-sun orange-color"></i>SopHot</a>
             <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
                 data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -47,7 +47,7 @@
 
 
     <main>
-        <section id="offers" class="py-5 offer mb-5 scroll-fix">
+        <section id="offers" class="py-5 mt-5 offer mb-5">
             {% block content %}
             {% endblock %}
         </section>

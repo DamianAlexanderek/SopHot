@@ -34,7 +34,7 @@ body {
 
 .scroll-fix::before {
     display: block;
-    margin-top: -3rem;
+    margin-top: -4rem;
     height: 3rem;
     content: '';
 }
@@ -148,9 +148,12 @@ header .btn {
 .detail .text-light {
     font-size: 2.6rem;
 }
-.detail .btn {
+
+
+.detail button {
+    width: 240px;
+    display: block;
+    padding: 10px 15px;
+    margin: 0 auto;
     font-size: 1.4rem;
-    padding: 1rem 2rem;
-    text-transform: uppercase;
-    border: #efca02;
 }

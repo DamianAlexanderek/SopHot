@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container offers text-center">
+    <div class="container offers text-center scroll-fix">
         <div class="row d-flex justify-content-around align-items-center">
             <div class="mx-auto ">
                 <button type="button" class="btn btn-primary rounded p-3">
@@ -29,10 +29,10 @@
     <hr class="w-50 w-lg-75 mx-auto bg-light">
 
     <div class="container py-5">
-        <div class="row">
+        <div class="row d-flex justify-content-between">
             {% for product in products %}
-            <div class="col-md-4 col-lg-4 shadow-lg p-3 mb-5 bg-white rounded mr-2 ">
-                <div class="card mb-5">
+            <div class="col-md-4 col-lg-4">
+                <div class="card mb-5 mr-2 shadow-lg p-3 mr-auto bg-white rounded">
                     <a href="{{ product.get_absolute_url }}">
                         <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static " " %}{% endif %}" class="card-img-top" alt="offers"></a>
                         <div class="card-body">
