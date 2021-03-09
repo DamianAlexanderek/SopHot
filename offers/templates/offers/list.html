@@ -31,7 +31,7 @@
     <div class="container py-5">
         <div class="row">
             {% for product in products %}
-            <div class="col-md-6 col-lg-4 shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="col-md-4 col-lg-4 shadow-lg p-3 mb-5 bg-white rounded mr-2 ">
                 <div class="card mb-5">
                     <a href="{{ product.get_absolute_url }}">
                         <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static " " %}{% endif %}" class="card-img-top" alt="offers"></a>

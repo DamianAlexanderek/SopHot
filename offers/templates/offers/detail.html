@@ -1,50 +1,113 @@
-{% extends "index.html" %}
 {% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SopHot</title>
 
-{% block title %}
-    {% if category %}{{ category.title }}{% else %}OFERTA{% endif %}
-{% endblock %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-{% block content %}
-    <div class="detail container shadow p-3 mb-5 bg-body rounded">
-        <div class="text-center py-5 m-2">
-            <p class="display-3">{{ product.name }}</p>
-            <p class="additional-text">{{ product.description|linebreaks }}</p>
-        </div>
-        <div class="row">
-            <div class="col-md-5 col-lg-4">
-                <div class="border p-5 mb-4 text-center">
-                    <h3>KATEGORIA</h3>
-                    <button type="button" class="btn btn-primary rounded p-3 mb-5 ">
-                    <a class="text-white" href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
-                    </button>
-                    <h3 class="mt-4">RABAT</h3>
-                    <p><a  href="#" class="btn btn-warning btn-lg disabled" style="font-size: 1.6rem" tabindex="-1" role="button" aria-disabled="true"><i class="fas fa-gift"></i>{{ product.bonus }}%</a></p>
-                    <h3 class="mt-4">ADRES</h3>
-                    <p>{{ product.adres }}</p>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <script src="https://kit.fontawesome.com/0d17ee9431.js" crossorigin="anonymous"></script>
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example">
+    <nav id="navbar-example" class="navbar navbar-expand-lg navbar-light bg-light py-4 fixed-top" id="navbar-example">
+        <div class="container">
+            <a class="navbar-brand px-4 blue-color" href="#offers"><i class="fas fa-sun orange-color"></i>SopHot</a>
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
+                data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link active" href="#offers">Oferty</a>
+                    <a class="nav-item nav-link" href="#partner">Jak zostać Partnerem</a>
+                    <a class="nav-item nav-link" href="#team">Zespół</a>
+                    <a class="nav-item nav-link" href="#contact">Kontakt</a>
                 </div>
             </div>
-            <div class="col md-7 col lg-8">
-                <div class="p-2 text-center">
-                    <div class="row">
-                        <div class="col-md-6 p-5">
-                            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "" %}{% endif %}" class="card-img-top" alt="detail">
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="hero-shadow"></div>
+        <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-light text-center">
+        <p class="display-1">SopHot</p>
+        <p class="header-text mb-5">Odkryjmy to razem</p>
+        <a href="#team" class="btn btn-outline-light">Poznaj nas</a>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="detail container shadow p-3 mb-5 bg-body rounded">
+                <div class="text-center py-5 m-2">
+                    <p class="display-3">{{ product.name }}</p>
+                    <p class="additional-text">{{ product.description|linebreaks }}</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-lg-4">
+                        <div class="border p-5 mb-4 text-center">
+                            <h3>KATEGORIA</h3>
+                            <button type="button" class="btn btn-primary rounded p-3 mb-5">
+                            <a class="text-white" href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
+                            </button>
+                            <h3 class="mt-4">RABAT</h3>
+                            <p><a  href="#" class="btn btn-warning btn-lg disabled" style="font-size: 1.6rem" tabindex="-1" role="button" aria-disabled="true"><i class="fas fa-gift"></i>{{ product.bonus }}%</a></p>
+                            <h3 class="mt-4">ADRES</h3>
+                            <p>{{ product.adres }}</p>
                         </div>
-                        <div class="col-md-6 p-5">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18561.52377783662!2d18.530086861949748!3d54.44192458427613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd0a914c1c265f%3A0xf7d319336f7a95fa!2sSopot!5e0!3m2!1spl!2spl!4v1615150065601!5m2!1spl!2spl" style="border:0;" allowfullscreen="" loading="lazy" frameborder="0"></iframe>
+                    </div>
+                    <div class="col md-7 col lg-8">
+                        <div class="p-2 text-center">
+                            <div class="row">
+                                <div class="col-md-6 p-5">
+                                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "" %}{% endif %}" class="card-img-top" alt="detail">
+                                </div>
+                                <div class="col-md-6 p-5">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18561.52377783662!2d18.530086861949748!3d54.44192458427613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd0a914c1c265f%3A0xf7d319336f7a95fa!2sSopot!5e0!3m2!1spl!2spl!4v1615150065601!5m2!1spl!2spl" style="border:0;" allowfullscreen="" loading="lazy" frameborder="0"></iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <div class="row d-flex justify-content-around align-items-center">
+                    <div class="mx-auto">
+                        <button type="button" class="btn btn-primary rounded p-3">
+                            {% if not category %}{% endif %}
+                            <a class="text-white" href="{% url "offers:offers_list" %}">WRÓĆ DO OFERT</a>
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row p-5">
-            <div class="d-grid gap-2 col-5 mx-auto ">
-                <button type="button" class="btn btn-primary rounded p-3">
-                    {% if not category %}{% endif %}
-                    <a class="text-white" href="{% url "offers:offers_list" %}">WRÓĆ DO OFERT</a>
-                </button>
-            </div>
-        </div>
-    </div>
-{% endblock %}
+        </section>
+    </main>
+
+    <footer class="bg-dark text-light border-top">
+        <p class="text-center py-4 m-0">&copy; A & D 2021 CarForSopot</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).click(function (event) {
+            var clickover = $(event.target);
+            var _opened = $(".navbar-collapse").hasClass("show");
+            if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+                $(".navbar-toggler").click();
+            }
+        });
+    </script>
+</body>
+</html>
+
